@@ -1,0 +1,29 @@
+.header {
+  background: var(--gray-700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+ 
+}
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+img {
+  padding-top: 0.5rem;
+}
+h1 {
+  color: var(--blue-light);
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+.do {
+  color: var(--purple-dark);
+}
+@media (max-width: 599px){
+  .header {
+    height: 160px;
+  }
+}

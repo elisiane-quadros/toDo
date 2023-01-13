@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 91px;
+  margin-bottom: 24px;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 736px;
+  color: var(--blue-dark);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.text {
+  color: var(--purple-dark);  
+}
+
+.header span {
+  color: var(--gray-200);
+  background-color: var(--gray-400);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+ 
+}
+@media (max-width: 599px) {
+  .header {
+    width: calc(100vw - 32px);
+    margin-top: 20px;
+  }
+  
+}

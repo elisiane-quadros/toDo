@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.taskArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 736px;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 0.4rem;
+}
+.taskArea img {
+  margin-top: 64px;
+  margin-bottom: 1rem;
+}
+.newTaskBox {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 736px;
+  border-radius: 8px; 
+  background-color: var(--gray-500);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  gap:1rem;
+}
+.checkAndDescription {
+  display: flex;
+  gap: 1rem;
+}
+.checkAndDescription p {
+  display: flex;
+  width: 582px;
+  word-break: break-all;
+}
+.iconButtons {
+  display: flex;
+  gap: 1rem;
+}
+.iconButtons button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--gray-300);
+}
+.checkButton {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.deleteButton:hover {
+  color: var(--red-500);
+}
+.editButton:hover {
+  color: var(--blue-dark)
+}
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (max-width: 599px) {
+  .newTaskBox {
+    width: calc(100vw - 32px);
+  }
+  .checkAndDescription p {
+    width: 90%;
+  }
+}

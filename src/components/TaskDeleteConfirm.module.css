@@ -1,0 +1,49 @@
+.dialogRoot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialogContent {
+  background-color: var(--gray-400);
+  width: 400px;
+  height: 150px;
+  padding: 1rem;
+  color: var(--gray-100);
+  border-radius: 8px;
+}
+.dialogContent:focus {
+  outline: none;
+  box-shadow: none;
+}
+.dialogContentText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.containerButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  width: 100%;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem; 
+  width: 100px;
+  height:40px;
+  background: var(--purple-dark);
+  border-radius: 8px;
+  border: none;
+  color: var(--gray-100);
+  transition: color 0.1s, background-color 0.1s;
+  cursor: pointer;
+}
+.buttons:hover {
+  background-color: var(--purple-light);
+  transition:  background-color 0.1s;
+}
