@@ -1,11 +1,12 @@
 import styles from "./Header.module.css";
-import toDoLogo from "../assets/img/rocket.png";
+import { ListChecks } from "phosphor-react";
 
 export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src={toDoLogo} alt="rocket" />
+       
+        <ListChecks size={40} />
         <h1>
           <span>to</span>
           <span className={styles.do}>Do</span>
