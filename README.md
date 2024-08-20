@@ -4,7 +4,7 @@
 
 Desafio proposto na trilha Ignite da Rocketseat, para desenvolver uma aplicação de lista de tarefas a partir apenas do layout no Figma.
 
-## ⚙️ Funcionalidades Proposta
+## ⚙️ Funcionalidades Propostas
 
 - [x] Página dinâmica para gerenciar tarefas.
 - [x] Criar e cadastrar tarefas.
