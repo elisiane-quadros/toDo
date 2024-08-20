@@ -38,6 +38,10 @@
   border: none;
   color: white;
 }
+.inputArea button:hover {
+  background-color: var(--blue-light);
+  transition:  background-color 0.1s;
+}
 .inputArea button:disabled {
   background-color: var(--gray-400);
   color: var(--gray-300);
