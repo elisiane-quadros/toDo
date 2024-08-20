@@ -2,17 +2,14 @@ import styles from "./InputTask.module.css";
 import { PlusCircle } from "phosphor-react";
 import { v4 as uuidv4 } from "uuid";
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux'
+import { ITask, RootState, setTasks } from "../../store/store";
 
-interface ITask {
-  id: string;
-  content: string;
-  finished: boolean;
-}
+export default function InputTask() {
+  const dispatch = useDispatch()
 
-interface InputTaskProps {
-  setTask: (task: any) => void;
-}
-export default function InputTask({ setTask }: InputTaskProps) {
+  const tasks = useSelector((state: RootState) => state.tasks.tasks)
+
   const [taskDescription, setTaskDescription] = useState("");
 
   function handleInputValue(event: ChangeEvent<HTMLInputElement>) {
@@ -27,7 +24,7 @@ export default function InputTask({ setTask }: InputTaskProps) {
       content: taskDescription,
       finished: false,
     };
-    setTask((state: ITask[]) => [...state, newTask]);
+    dispatch(setTasks([...tasks, newTask])) ;
     setTaskDescription("");
   }
 

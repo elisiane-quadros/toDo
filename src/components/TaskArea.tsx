@@ -4,26 +4,21 @@ import { CheckCircle, Circle, PencilLine, Trash } from "phosphor-react";
 import { useState } from "react";
 import TaskDeleteConfirm from "./TaskDeleteConfirm";
 import TaskEditContent from "./TaskEdit";
+import { RootState, ITask, setTasks } from "../../store/store";
+import { useDispatch, useSelector } from "react-redux";
 
-interface ITask {
-  id: string;
-  content: string;
-  finished: boolean;
-}
 
-interface TaskAreaProps {
-  task: ITask[];
-  setTask: (task: any) => void;
-}
+export function TaskArea() {
+  const dispatch = useDispatch()
+  const tasks = useSelector((state: RootState) => state.tasks.tasks)
 
-export function TaskArea({ task, setTask }: TaskAreaProps) {
   const [openConfirmDelete, setOpenConfirmDelete] = useState(false);
   const [openEditTask, setOpenEditTask] = useState(false);
   const [currentId, setCurrentId] = useState("");
   const [currentContent, setCurrentContent] = useState("");
 
   function handleFinished(id: string) {
-    const taskTemp = task.map((t: ITask) => {
+    const taskTemp = tasks.map((t: ITask) => {
       if (t.id === id) {
         return {
           id: t.id,
@@ -34,7 +29,7 @@ export function TaskArea({ task, setTask }: TaskAreaProps) {
         return t;
       }
     });
-    setTask(taskTemp);
+    dispatch(setTasks(taskTemp));
   }
 
   const handleOpenEditTask = (id: string, content: string) => {
@@ -44,7 +39,7 @@ export function TaskArea({ task, setTask }: TaskAreaProps) {
   };
 
   function handleEditTaskContent(id: string, content: string) {
-    const editedTask = task.map((t: ITask) => {
+    const editedTask = tasks.map((t: ITask) => {
       if (t.id === id) {
         return {
           id: t.id,
@@ -55,7 +50,7 @@ export function TaskArea({ task, setTask }: TaskAreaProps) {
         return t;
       }
     });
-    setTask(editedTask);
+    dispatch(setTasks(editedTask));
   }
 
   const handleConfirmDelete = (id: string) => {
@@ -63,15 +58,15 @@ export function TaskArea({ task, setTask }: TaskAreaProps) {
     setCurrentId(id);
   };
   function handleDeleteTask(id: string) {
-    const newTask = task.filter((ts) => {
+    const newTask = tasks.filter((ts) => {
       return ts.id !== id;
     });
-    setTask(newTask);
+   dispatch(setTasks(newTask)) ;
   }
 
-  return task.length ? (
+  return tasks.length ? (
     <div>
-      {task.map((t: ITask) => {
+      {tasks.map((t: ITask) => {
         return (
           <div key={t.id} className={styles.container}>
             <div className={styles.newTaskBox}>
@@ -128,5 +123,6 @@ export function TaskArea({ task, setTask }: TaskAreaProps) {
         <p>Crie e organize seus itens a fazer</p>
       </div>
     </div>
+    
   );
 }

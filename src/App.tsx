@@ -3,7 +3,6 @@ import { TaskControl } from "./components/TaskControl";
 import { TaskArea } from "./components/TaskArea";
 
 import "./global.css";
-import { useState } from "react";
 import InputTask from "./components/InputTask";
 
 interface ITask {
@@ -13,14 +12,12 @@ interface ITask {
 }
 
 export function App() {
-  const [task, setTask] = useState<ITask[]>([]);
-
   return (
     <div>
       <Header />
-      <InputTask setTask={setTask} />
-      <TaskControl task={task} />
-      <TaskArea task={task} setTask={setTask} />
+      <InputTask />
+      <TaskControl />
+      <TaskArea />
     </div>
   );
 }
