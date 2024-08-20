@@ -17,8 +17,8 @@ Desafio proposto na trilha Ignite da Rocketseat, para desenvolver uma aplicaçã
 - [x] Criação de um modal para editar as tarefas criadas.
 - [x] Abertura do modal para deletar tarefas.
 - [x] Botão Criar tarefa fica desabilitado quando o campo de descrição estiver vazio.
-- [x] Implementado Redux-toolkit paragerenciamento e manipulação dos estados da aplicação.
-- [x] Implementado o Redux-persist para persistir os estados.
+- [x] Implementação do Redux Toolkit para gerenciamento e manipulação dos estados da aplicação.
+- [x] Implementação do Redux-persist para persistir os estados.
 
 ### 🛠 Tecnologias
 
