@@ -1,4 +1,6 @@
-import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { configureStore, createSlice, PayloadAction, combineReducers } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import {persistReducer} from 'redux-persist'
 
  export interface ITask {
   id: string;
@@ -26,10 +28,20 @@ const tasksSlice = createSlice({
 
 export const { setTasks } = tasksSlice.actions;
 
+const persistConfig = {
+  key:'root',
+  version: 1,
+  storage
+}
+
+const reducer = combineReducers({
+  tasks: tasksSlice.reducer,
+})
+
+const persistedReducer = persistReducer(persistConfig, reducer)
+
 const store = configureStore({
-  reducer: {
-    tasks: tasksSlice.reducer,
-  },
+  reducer: persistedReducer
 });
 
 export type RootState = ReturnType<typeof store.getState>;
