@@ -2,6 +2,7 @@
   outline: 1px solid var(--blue-light);
   box-shadow: none;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -11,10 +12,12 @@
   position: absolute;
   top: 173px;
 }
+
 .inputArea {
   display: flex;
   gap: 8px;
 }
+
 .inputArea input {
   height: 100%;
   width: 638px;
@@ -24,6 +27,7 @@
   padding: 1rem;
   color:var(--gray-200);
 }
+
 .inputArea button {
   display: flex;
   flex-direction: row;
@@ -38,14 +42,17 @@
   border: none;
   color: white;
 }
+
 .inputArea button:hover {
   background-color: var(--blue-light);
   transition:  background-color 0.1s;
 }
+
 .inputArea button:disabled {
   background-color: var(--gray-400);
   color: var(--gray-300);
 }
+
 @media (max-width: 599px) {
   .inputArea {
     flex-direction: column;

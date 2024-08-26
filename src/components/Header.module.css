@@ -6,23 +6,28 @@
   height: 200px;
  
 }
+
 .logo {
   display: flex;
   gap: 0.5rem;
   align-items: center;
   color: var(--purple-dark);
 }
+
 img {
   padding-top: 0.5rem;
 }
+
 h1 {
   color: var(--blue-light);
   font-weight: 900;
   font-size: 2.5rem;
 }
+
 .do {
   color: var(--purple-dark);
 }
+
 @media (max-width: 599px){
   .header {
     height: 160px;

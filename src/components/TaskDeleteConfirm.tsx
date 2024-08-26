@@ -29,9 +29,9 @@ export default function TaskDeleteConfirm({
       className={styles.dialogRoot}
     >
       <div className={styles.dialogContent}>
-        <div className={styles.dialogContentText}>
+        <h2 className={styles.dialogContentText}>
           Tem certeza que deseja excluir a tarefa?
-        </div>
+        </h2>
         <div className={styles.containerButtons}>
           <button className={styles.buttons} onClick={handleClose}>
             Cancelar
